@@ -11,16 +11,24 @@ This client has some opinionated changes to the generated code / API, such as:
 ## Installation
 
 ```bash
-npm install stapi-client
+npm install stapi-client-ts
+```
+
+## Usage
+
+```typescript
+import STAPIClient from "stapi-client-ts";
+const Movies = await STAPIClient.Movies.page();
+console.log(Movies);
 ```
 
 # Example
 
-See [stapi-client-example]() for an example of a simple Express server that uses this client.
+See [stapi-client-example]() for an example of an Express server that uses this client.
 
 # Disclaimer
 
-I'm not a trekkie and I know very little about Star Trek. I created this in < 12 hours as a personal challenge to see how well I could leverage my existing skills. I'm not affiliated with STAPI in any way. ChatGPT was consulted at times, but proved mostly useless.
+I'm not a trekkie and I know very little about Star Trek. I created this in < 12 hours as a personal challenge to see how well I could leverage my existing skills. I'm not affiliated with STAPI in any way. It isn't complete and I may at least finish this, but it is unlikely that I will maintain this project beyond this month, but I will accept pull requests.
 
 # License
 
