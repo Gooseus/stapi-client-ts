@@ -24,7 +24,7 @@ console.log(Movies);
 
 # Example
 
-See [stapi-client-example]() for an example of an Express server that uses this client.
+See [stapi-server-example](https://github.com/Gooseus/stapi-server-example) for an example of an Express server that uses this client.
 
 # Disclaimer
 
