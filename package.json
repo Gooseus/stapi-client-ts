@@ -1,0 +1,26 @@
+{
+  "name": "stapi-client-ts",
+  "version": "0.5.0",
+  "description": "",
+  "type": "module",
+  "main": "./lib/index.js",
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "tsc": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.3.3",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "jsonapi-serializer": "^3.6.7",
+    "ts-transformer-keys": "^0.4.4"
+  }
+}

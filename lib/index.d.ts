@@ -1,0 +1,456 @@
+import { AnimalBase, AnimalFull, AnimalSearchCriteria, ApiError, AstronomicalObjectV2Base, AstronomicalObjectV2Full, AstronomicalObjectV2SearchCriteria, AstronomicalObjectV2Type, BookCollectionBaseResponse, BookCollectionFull, BookCollectionSearchCriteria, BookSeriesBaseResponse, BookSeriesFull, BookSeriesSearchCriteria, BookV2BaseResponse, BookV2Full, BookV2SearchCriteria, CharacterBaseResponse, CharacterFull, CharacterSearchCriteria, ComicCollectionBaseResponse, ComicCollectionFull, ComicCollectionSearchCriteria, ComicSeriesBaseResponse, ComicSeriesFull, ComicSeriesSearchCriteria, ComicStripBaseResponse, ComicStripFull, ComicStripSearchCriteria, CompanyV2BaseResponse, CompanyV2Full, CompanyV2SearchCriteria, ConflictBaseResponse, ConflictSearchCriteria, ConflictV2Full, DataVersion, ElementV2BaseResponse, ElementV2Full, ElementV2SearchCriteria, EpisodeBaseResponse, EpisodeFull, EpisodeSearchCriteria, Error, FoodBaseResponse, FoodFull, FoodSearchCriteria, LiteratureBaseResponse, LiteratureFull, LiteratureSearchCriteria, LocationV2BaseResponse, LocationV2Full, LocationV2SearchCriteria, MagazineBaseResponse, MagazineFull, MagazineSearchCriteria, MagazineSeriesBaseResponse, MagazineSeriesFull, MagazineSeriesSearchCriteria, MaterialBaseResponse, MaterialFull, MaterialSearchCriteria, MedicalConditionBaseResponse, MedicalConditionFull, MedicalConditionSearchCriteria, MovieBaseResponse, MovieFull, MovieSearchCriteria, OccupationV2BaseResponse, OccupationV2Full, OccupationV2SearchCriteria, OrganizationBaseResponse, OrganizationFull, OrganizationSearchCriteria, PerformerV2BaseResponse, PerformerV2Full, PerformerV2SearchCriteria, RequestSort, ResponsePage, SeasonBaseResponse, SeasonFull, SeasonSearchCriteria, SeriesBaseResponse, SeriesFull, SeriesSearchCriteria, SoundtrackBaseResponse, SoundtrackFull, SoundtrackSearchCriteria, SpacecraftClassV2BaseResponse, SpacecraftClassV2SearchCriteria, SpacecraftClassV3Full, SpacecraftV2BaseResponse, SpacecraftV2Full, SpacecraftV2SearchCriteria, SpeciesV2BaseResponse, SpeciesV2Full, SpeciesV2SearchCriteria, StaffV2BaseResponse, StaffV2Full, StaffV2SearchCriteria, TechnologyV2BaseResponse, TechnologyV2Full, TechnologyV2SearchCriteria, TitleV2BaseResponse, TitleV2Full, TitleV2SearchCriteria, TradingCardBaseResponse, TradingCardDeckBaseResponse, TradingCardDeckFull, TradingCardDeckSearchCriteria, TradingCardFull, TradingCardSearchCriteria, TradingCardSetBaseResponse, TradingCardSetFull, TradingCardSetSearchCriteria, VideoGameBaseResponse, VideoGameFull, VideoGameSearchCriteria, VideoReleaseV2BaseResponse, VideoReleaseV2Full, VideoReleaseV2SearchCriteria, WeaponV2BaseResponse, WeaponV2Full, WeaponV2SearchCriteria } from "./client";
+type STAPIError = ApiError | Error;
+type APIBaseListResponse<T> = {
+    page: ResponsePage;
+    size: Response;
+    items: Array<T>;
+};
+export type STAPIRequestSort = RequestSort;
+export type AnimalListResponse = APIBaseListResponse<AnimalBase> | STAPIError;
+export type AnimalSearchRecord = Record<keyof AnimalSearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type AnimalItemResponse = AnimalFull | STAPIError;
+export type AstronimcalObjectEnum = AstronomicalObjectV2Type;
+export type AstronomicalSearchRecord = Record<keyof AstronomicalObjectV2SearchCriteria, number | string | STAPIRequestSort | AstronimcalObjectEnum>;
+export type AstronomicalObjectListResponse = APIBaseListResponse<AstronomicalObjectV2Base> | STAPIError;
+export type AstronomicalObjectItemResponse = AstronomicalObjectV2Full | STAPIError;
+export type BookCollectionSearchRecord = Record<keyof BookCollectionSearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type BookCollectionListResponse = BookCollectionBaseResponse | STAPIError;
+export type BookCollectionItemResponse = BookCollectionFull | STAPIError;
+export type BookSeriesSearchRecord = Record<keyof BookSeriesSearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type BookSeriesListResponse = BookSeriesBaseResponse | STAPIError;
+export type BookSeriesItemResponse = BookSeriesFull | STAPIError;
+export type BookSearchRecord = Record<keyof BookV2SearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type BookListResponse = BookV2BaseResponse | STAPIError;
+export type BookItemResponse = BookV2Full | STAPIError;
+export type CharacterSearchRecord = Record<keyof CharacterSearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type CharacterListResponse = CharacterBaseResponse | STAPIError;
+export type CharacterItemResponse = CharacterFull | STAPIError;
+export type ComicCollectionSearchRecord = Record<keyof ComicCollectionSearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type ComicCollectionListResponse = ComicCollectionBaseResponse | STAPIError;
+export type ComicCollectionItemResponse = ComicCollectionFull | STAPIError;
+export type ComicSeriesSearchRecord = Record<keyof ComicSeriesSearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type ComicSeriesListResponse = ComicSeriesBaseResponse | STAPIError;
+export type ComicSeriesItemResponse = ComicSeriesFull | STAPIError;
+export type ComicStripSearchRecord = Record<keyof ComicStripSearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type ComicStripListResponse = ComicStripBaseResponse | STAPIError;
+export type ComicStripItemResponse = ComicStripFull | STAPIError;
+export type CompanySearchRecord = Record<keyof CompanyV2SearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type CompanyListResponse = CompanyV2BaseResponse | STAPIError;
+export type CompanyItemResponse = CompanyV2Full | STAPIError;
+export type ConflictSearchRecord = Record<keyof ConflictSearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type ConflictListResponse = ConflictBaseResponse | STAPIError;
+export type ConflictItemResponse = ConflictV2Full | STAPIError;
+export type DataVersionResponse = DataVersion | STAPIError;
+export type ElementSearchRecord = Record<keyof ElementV2SearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type ElementListResponse = ElementV2BaseResponse | STAPIError;
+export type ElementItemResponse = ElementV2Full | STAPIError;
+export type EpisodeSearchRecord = Record<keyof EpisodeSearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type EpisodeListResponse = EpisodeBaseResponse | STAPIError;
+export type EpisodeItemResponse = EpisodeFull | STAPIError;
+export type FoodSearchRecord = Record<keyof FoodSearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type FoodListResponse = FoodBaseResponse | STAPIError;
+export type FoodItemResponse = FoodFull | STAPIError;
+export type LiteratureSearchRecord = Record<keyof LiteratureSearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type LiteratureListResponse = LiteratureBaseResponse | STAPIError;
+export type LiteratureItemResponse = LiteratureFull | STAPIError;
+export type LocationSearchRecord = Record<keyof LocationV2SearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type LocationListResponse = LocationV2BaseResponse | STAPIError;
+export type LocationItemResponse = LocationV2Full | STAPIError;
+export type MagazineSeriesSearchRecord = Record<keyof MagazineSeriesSearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type MagazineSeriesListResponse = MagazineSeriesBaseResponse | STAPIError;
+export type MagazineSeriesItemResponse = MagazineSeriesFull | STAPIError;
+export type MagazineSearchRecord = Record<keyof MagazineSearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type MagazineListResponse = MagazineBaseResponse | STAPIError;
+export type MagazineItemResponse = MagazineFull | STAPIError;
+export type MaterialSearchRecord = Record<keyof MaterialSearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type MaterialListResponse = MaterialBaseResponse | STAPIError;
+export type MaterialItemResponse = MaterialFull | STAPIError;
+export type MedicalConditionSearchRecord = Record<keyof MedicalConditionSearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type MedicalConditionListResponse = MedicalConditionBaseResponse | STAPIError;
+export type MedicalConditionItemResponse = MedicalConditionFull | STAPIError;
+export type MovieSearchRecord = Record<keyof MovieSearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type MovieListResponse = MovieBaseResponse | STAPIError;
+export type MovieItemResponse = MovieFull | STAPIError;
+export type OccupationSearchRecord = Record<keyof OccupationV2SearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type OccupationListResponse = OccupationV2BaseResponse | STAPIError;
+export type OccupationItemResponse = OccupationV2Full | STAPIError;
+export type OrganizationSearchRecord = Record<keyof OrganizationSearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type OrganizationListResponse = OrganizationBaseResponse | STAPIError;
+export type OrganizationItemResponse = OrganizationFull | STAPIError;
+export type PerformerSearchRecord = Record<keyof PerformerV2SearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type PerformerListResponse = PerformerV2BaseResponse | STAPIError;
+export type PerformerItemResponse = PerformerV2Full | STAPIError;
+export type SeasonSearchRecord = Record<keyof SeasonSearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type SeasonListResponse = SeasonBaseResponse | STAPIError;
+export type SeasonItemResponse = SeasonFull | STAPIError;
+export type SeriesSearchRecord = Record<keyof SeriesSearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type SeriesListResponse = SeriesBaseResponse | STAPIError;
+export type SeriesItemResponse = SeriesFull | STAPIError;
+export type SoundtrackSearchRecord = Record<keyof SoundtrackSearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type SoundtrackListResponse = SoundtrackBaseResponse | STAPIError;
+export type SoundtrackItemResponse = SoundtrackFull | STAPIError;
+export type SpacecraftClassSearchRecord = Record<keyof SpacecraftClassV2SearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type SpacecraftClassListResponse = SpacecraftClassV2BaseResponse | STAPIError;
+export type SpacecraftClassItemResponse = SpacecraftClassV3Full | STAPIError;
+export type SpacecraftSearchRecord = Record<keyof SpacecraftV2SearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type SpacecraftListResponse = SpacecraftV2BaseResponse | STAPIError;
+export type SpacecraftItemResponse = SpacecraftV2Full | STAPIError;
+export type SpeciesSearchRecord = Record<keyof SpeciesV2SearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type SpeciesListResponse = SpeciesV2BaseResponse | STAPIError;
+export type SpeciesItemResponse = SpeciesV2Full | STAPIError;
+export type StaffSearchRecord = Record<keyof StaffV2SearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type StaffListResponse = StaffV2BaseResponse | STAPIError;
+export type StaffItemResponse = StaffV2Full | STAPIError;
+export type TechnologySearchRecord = Record<keyof TechnologyV2SearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type TechnologyListResponse = TechnologyV2BaseResponse | STAPIError;
+export type TechnologyItemResponse = TechnologyV2Full | STAPIError;
+export type TitleSearchRecord = Record<keyof TitleV2SearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type TitleListResponse = TitleV2BaseResponse | STAPIError;
+export type TitleItemResponse = TitleV2Full | STAPIError;
+export type TradingCardDeckSearchRecord = Record<keyof TradingCardDeckSearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type TradingCardDeckListResponse = TradingCardDeckBaseResponse | STAPIError;
+export type TradingCardDeckItemResponse = TradingCardDeckFull | STAPIError;
+export type TradingCardSearchRecord = Record<keyof TradingCardSearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type TradingCardListResponse = TradingCardBaseResponse | STAPIError;
+export type TradingCardItemResponse = TradingCardFull | STAPIError;
+export type TradingCardSetSearchRecord = Record<keyof TradingCardSetSearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type TradingCardSetListResponse = TradingCardSetBaseResponse | STAPIError;
+export type TradingCardSetItemResponse = TradingCardSetFull | STAPIError;
+export type VideoGameSearchRecord = Record<keyof VideoGameSearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type VideoGameListResponse = VideoGameBaseResponse | STAPIError;
+export type VideoGameItemResponse = VideoGameFull | STAPIError;
+export type VideoReleaseSearchRecord = Record<keyof VideoReleaseV2SearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type VideoReleaseListResponse = VideoReleaseV2BaseResponse | STAPIError;
+export type VideoReleaseItemResponse = VideoReleaseV2Full | STAPIError;
+export type WeaponSearchRecord = Record<keyof WeaponV2SearchCriteria, number | string | boolean | STAPIRequestSort | undefined>;
+export type WeaponListResponse = WeaponV2BaseResponse | STAPIError;
+export type WeaponItemResponse = WeaponV2Full | STAPIError;
+declare function searchAnimals(page: number, size: number, sort: string, formData: AnimalSearchRecord): Promise<AnimalListResponse>;
+declare function pageAnimals(page: number, size: number): Promise<AnimalListResponse>;
+declare function getAnimal(uid: string): Promise<AnimalItemResponse>;
+declare function searchAstronomicalObjects(page: number, size: number, sort: string, formData: AstronomicalSearchRecord): Promise<AstronomicalObjectListResponse>;
+declare function pageAstronomicalObjects(page: number, size: number): Promise<AstronomicalObjectListResponse>;
+declare function getAstronomicalObject(uid: string): Promise<AstronomicalObjectItemResponse>;
+declare function searchBookCollections(page: number, size: number, sort: string, formData: BookCollectionSearchRecord): Promise<BookCollectionListResponse>;
+declare function pageBookCollections(page: number, size: number): Promise<BookCollectionListResponse>;
+declare function getBookCollection(uid: string): Promise<BookCollectionItemResponse>;
+declare function searchBookSeries(page: number, size: number, sort: string, formData: BookSeriesSearchRecord): Promise<BookSeriesListResponse>;
+declare function pageBookSeries(page: number, size: number): Promise<BookSeriesListResponse>;
+declare function getBookSeries(uid: string): Promise<BookSeriesItemResponse>;
+declare function searchBooks(page: number, size: number, sort: string, formData: BookSearchRecord): Promise<BookListResponse>;
+declare function pageBooks(page: number, size: number): Promise<BookListResponse>;
+declare function getBook(uid: string): Promise<BookItemResponse>;
+declare function searchCharacters(page: number, size: number, sort: string, formData: any): Promise<CharacterListResponse>;
+declare function pageCharacters(page: number, size: number): Promise<CharacterListResponse>;
+declare function getCharacter(uid: string): Promise<CharacterItemResponse>;
+declare function searchComicCollections(page: number, size: number, sort: string, formData: ComicSeriesSearchRecord): Promise<ComicCollectionListResponse>;
+declare function pageComicCollections(page: number, size: number): Promise<ComicCollectionListResponse>;
+declare function getComicCollection(uid: string): Promise<ComicCollectionItemResponse>;
+declare function searchComicSeries(page: number, size: number, sort: string, formData: ComicSeriesSearchRecord): Promise<ComicSeriesListResponse>;
+declare function pageComicSeries(page: number, size: number): Promise<ComicSeriesListResponse>;
+declare function getComicSeries(uid: string): Promise<ComicSeriesItemResponse>;
+declare function searchComicStrips(page: number, size: number, sort: string, formData: ComicStripSearchRecord): Promise<ComicStripListResponse>;
+declare function pageComicStrips(page: number, size: number): Promise<ComicStripListResponse>;
+declare function getComicStrip(uid: string): Promise<ComicStripItemResponse>;
+declare function searchCompanies(page: number, size: number, sort: string, formData: CompanySearchRecord): Promise<CompanyListResponse>;
+declare function pageCompanies(page: number, size: number): Promise<CompanyListResponse>;
+declare function getCompany(uid: string): Promise<CompanyItemResponse>;
+declare function searchConflicts(page: number, size: number, sort: string, formData: ConflictSearchRecord): Promise<ConflictListResponse>;
+declare function pageConflicts(page: number, size: number): Promise<ConflictListResponse>;
+declare function getConflict(uid: string): Promise<ConflictItemResponse>;
+declare function getDataVersion(): Promise<DataVersionResponse>;
+declare function searchElements(page: number, size: number, sort: string, formData: ElementSearchRecord): Promise<ElementListResponse>;
+declare function pageElements(page: number, size: number): Promise<ElementListResponse>;
+declare function getElement(uid: string): Promise<ElementItemResponse>;
+declare function searchEpisodes(page: number, size: number, sort: string, formData: EpisodeSearchRecord): Promise<EpisodeListResponse>;
+declare function pageEpisodes(page: number, size: number): Promise<EpisodeListResponse>;
+declare function getEpisode(uid: string): Promise<EpisodeItemResponse>;
+declare function searchFoods(page: number, size: number, sort: string, formData: FoodSearchRecord): Promise<FoodListResponse>;
+declare function pageFoods(page: number, size: number): Promise<FoodListResponse>;
+declare function getFood(uid: string): Promise<FoodItemResponse>;
+declare function searchLiterature(page: number, size: number, sort: string, formData: LiteratureSearchRecord): Promise<LiteratureListResponse>;
+declare function pageLiterature(page: number, size: number): Promise<LiteratureListResponse>;
+declare function getLiterature(uid: string): Promise<LiteratureItemResponse>;
+declare function searchLocations(page: number, size: number, sort: string, formData: LocationSearchRecord): Promise<LocationListResponse>;
+declare function pageLocations(page: number, size: number): Promise<LocationListResponse>;
+declare function getLocation(uid: string): Promise<LocationItemResponse>;
+declare function searchMagazineSeries(page: number, size: number, sort: string, formData: MagazineSeriesSearchRecord): Promise<MagazineSeriesListResponse>;
+declare function pageMagazineSeries(page: number, size: number): Promise<MagazineSeriesListResponse>;
+declare function getMagazineSeries(uid: string): Promise<MagazineSeriesItemResponse>;
+declare function searchMagazines(page: number, size: number, sort: string, formData: MagazineSearchRecord): Promise<MagazineListResponse>;
+declare function pageMagazines(page: number, size: number): Promise<MagazineListResponse>;
+declare function getMagazine(uid: string): Promise<MagazineItemResponse>;
+declare function searchMaterials(page: number, size: number, sort: string, formData: MaterialSearchRecord): Promise<MaterialListResponse>;
+declare function pageMaterials(page: number, size: number): Promise<MaterialListResponse>;
+declare function getMaterial(uid: string): Promise<MaterialItemResponse>;
+declare function searchMedicalConditions(page: number, size: number, sort: string, formData: MedicalConditionSearchRecord): Promise<MedicalConditionListResponse>;
+declare function pageMedicalConditions(page: number, size: number): Promise<MedicalConditionListResponse>;
+declare function getMedicalCondition(uid: string): Promise<MedicalConditionItemResponse>;
+declare function searchMovies(page: number, size: number, sort: string, formData: MovieSearchRecord): Promise<MovieListResponse>;
+declare function pageMovies(page: number, size: number): Promise<MovieListResponse>;
+declare function getMovie(uid: string): Promise<MovieItemResponse>;
+declare function searchOccupations(page: number, size: number, sort: string, formData: OccupationSearchRecord): Promise<OccupationListResponse>;
+declare function pageOccupations(page: number, size: number): Promise<OccupationListResponse>;
+declare function getOccupation(uid: string): Promise<OccupationItemResponse>;
+declare function searchOrganizations(page: number, size: number, sort: string, formData: OrganizationSearchRecord): Promise<OrganizationListResponse>;
+declare function pageOrganizations(page: number, size: number): Promise<OrganizationListResponse>;
+declare function getOrganization(uid: string): Promise<OrganizationItemResponse>;
+declare function searchPerformers(page: number, size: number, sort: string, formData: PerformerSearchRecord): Promise<PerformerListResponse>;
+declare function pagePerformers(page: number, size: number): Promise<PerformerListResponse>;
+declare function getPerformer(uid: string): Promise<PerformerItemResponse>;
+declare function searchSeasons(page: number, size: number, sort: string, formData: SeasonSearchRecord): Promise<SeasonListResponse>;
+declare function pageSeasons(page: number, size: number): Promise<SeasonListResponse>;
+declare function getSeason(uid: string): Promise<SeasonItemResponse>;
+declare function searchSeries(page: number, size: number, sort: string, formData: SeriesSearchRecord): Promise<SeriesListResponse>;
+declare function pageSeries(page: number, size: number): Promise<SeriesListResponse>;
+declare function getSeries(uid: string): Promise<SeriesItemResponse>;
+declare function searchSoundtracks(page: number, size: number, sort: string, formData: SoundtrackSearchRecord): Promise<SoundtrackListResponse>;
+declare function pageSoundtracks(page: number, size: number): Promise<SoundtrackListResponse>;
+declare function getSoundtrack(uid: string): Promise<SoundtrackItemResponse>;
+declare function searchSpacecraftClasses(page: number, size: number, sort: string, formData: SpacecraftClassSearchRecord): Promise<SpacecraftClassListResponse>;
+declare function pageSpacecraftClasses(page: number, size: number): Promise<SpacecraftClassListResponse>;
+declare function getSpacecraftClass(uid: string): Promise<SpacecraftClassItemResponse>;
+declare function searchSpacecrafts(page: number, size: number, sort: string, formData: SpacecraftV2SearchCriteria): Promise<SpacecraftListResponse>;
+declare function pageSpacecrafts(page: number, size: number): Promise<SpacecraftListResponse>;
+declare function getSpacecraft(uid: string): Promise<SpacecraftItemResponse>;
+declare function searchSpecies(page: number, size: number, sort: string, formData: SpeciesSearchRecord): Promise<SpeciesListResponse>;
+declare function pageSpecies(page: number, size: number): Promise<SpeciesListResponse>;
+declare function getSpecies(uid: string): Promise<SpeciesItemResponse>;
+declare function searchStaff(page: number, size: number, sort: string, formData: StaffSearchRecord): Promise<StaffListResponse>;
+declare function pageStaff(page: number, size: number): Promise<StaffListResponse>;
+declare function getStaff(uid: string): Promise<StaffItemResponse>;
+declare function searchTechnologies(page: number, size: number, sort: string, formData: TechnologySearchRecord): Promise<TechnologyListResponse>;
+declare function pageTechnologies(page: number, size: number): Promise<TechnologyListResponse>;
+declare function getTechnology(uid: string): Promise<TechnologyItemResponse>;
+declare function searchTitles(page: number, size: number, sort: string, formData: TitleSearchRecord): Promise<TitleListResponse>;
+declare function pageTitles(page: number, size: number): Promise<TitleListResponse>;
+declare function getTitle(uid: string): Promise<TitleItemResponse>;
+declare function searchTradingCardDecks(page: number, size: number, sort: string, formData: TradingCardDeckSearchRecord): Promise<TradingCardDeckListResponse>;
+declare function pageTradingCardDecks(page: number, size: number): Promise<TradingCardDeckListResponse>;
+declare function getTradingCardDeck(uid: string): Promise<TradingCardDeckItemResponse>;
+declare function searchTradingCards(page: number, size: number, sort: string, formData: TradingCardSearchRecord): Promise<TradingCardListResponse>;
+declare function pageTradingCards(page: number, size: number): Promise<TradingCardListResponse>;
+declare function getTradingCard(uid: string): Promise<TradingCardItemResponse>;
+declare function searchTradingCardSets(page: number, size: number, sort: string, formData: TradingCardSetSearchRecord): Promise<TradingCardSetListResponse>;
+declare function pageTradingCardSets(page: number, size: number): Promise<TradingCardSetListResponse>;
+declare function getTradingCardSet(uid: string): Promise<TradingCardSetItemResponse>;
+declare function searchVideoGames(page: number, size: number, sort: string, formData: VideoGameSearchRecord): Promise<VideoGameListResponse>;
+declare function pageVideoGames(page: number, size: number): Promise<VideoGameListResponse>;
+declare function getVideoGame(uid: string): Promise<VideoGameItemResponse>;
+declare function searchVideoReleases(page: number, size: number, sort: string, formData: VideoReleaseSearchRecord): Promise<VideoReleaseListResponse>;
+declare function pageVideoReleases(page: number, size: number): Promise<VideoReleaseListResponse>;
+declare function getVideoRelease(uid: string): Promise<VideoReleaseItemResponse>;
+declare function searchWeapons(page: number, size: number, sort: string, formData: WeaponSearchRecord): Promise<WeaponListResponse>;
+declare function pageWeapons(page: number, size: number): Promise<WeaponListResponse>;
+declare function getWeapon(uid: string): Promise<WeaponItemResponse>;
+export declare const AnimalClient: {
+    search: typeof searchAnimals;
+    page: typeof pageAnimals;
+    get: typeof getAnimal;
+};
+export declare const AstronomicalObjectClient: {
+    search: typeof searchAstronomicalObjects;
+    page: typeof pageAstronomicalObjects;
+    get: typeof getAstronomicalObject;
+};
+declare const STAPIClient: {
+    Animal: {
+        search: typeof searchAnimals;
+        page: typeof pageAnimals;
+        get: typeof getAnimal;
+    };
+    AstronomicalObject: {
+        search: typeof searchAstronomicalObjects;
+        page: typeof pageAstronomicalObjects;
+        get: typeof getAstronomicalObject;
+    };
+    BookCollection: {
+        search: typeof searchBookCollections;
+        page: typeof pageBookCollections;
+        get: typeof getBookCollection;
+    };
+    BookSeries: {
+        search: typeof searchBookSeries;
+        page: typeof pageBookSeries;
+        get: typeof getBookSeries;
+    };
+    Book: {
+        search: typeof searchBooks;
+        page: typeof pageBooks;
+        get: typeof getBook;
+    };
+    Character: {
+        search: typeof searchCharacters;
+        page: typeof pageCharacters;
+        get: typeof getCharacter;
+    };
+    ComicCollection: {
+        search: typeof searchComicCollections;
+        page: typeof pageComicCollections;
+        get: typeof getComicCollection;
+    };
+    ComicSeries: {
+        search: typeof searchComicSeries;
+        page: typeof pageComicSeries;
+        get: typeof getComicSeries;
+    };
+    ComicStrip: {
+        search: typeof searchComicStrips;
+        page: typeof pageComicStrips;
+        get: typeof getComicStrip;
+    };
+    Company: {
+        search: typeof searchCompanies;
+        page: typeof pageCompanies;
+        get: typeof getCompany;
+    };
+    Conflict: {
+        search: typeof searchConflicts;
+        page: typeof pageConflicts;
+        get: typeof getConflict;
+    };
+    DataVersion: {
+        get: typeof getDataVersion;
+    };
+    Element: {
+        search: typeof searchElements;
+        page: typeof pageElements;
+        get: typeof getElement;
+    };
+    Episode: {
+        search: typeof searchEpisodes;
+        page: typeof pageEpisodes;
+        get: typeof getEpisode;
+    };
+    Food: {
+        search: typeof searchFoods;
+        page: typeof pageFoods;
+        get: typeof getFood;
+    };
+    Literature: {
+        search: typeof searchLiterature;
+        page: typeof pageLiterature;
+        get: typeof getLiterature;
+    };
+    Location: {
+        search: typeof searchLocations;
+        page: typeof pageLocations;
+        get: typeof getLocation;
+    };
+    MagazineSeries: {
+        search: typeof searchMagazineSeries;
+        page: typeof pageMagazineSeries;
+        get: typeof getMagazineSeries;
+    };
+    Magazine: {
+        search: typeof searchMagazines;
+        page: typeof pageMagazines;
+        get: typeof getMagazine;
+    };
+    Material: {
+        search: typeof searchMaterials;
+        page: typeof pageMaterials;
+        get: typeof getMaterial;
+    };
+    MedicalCondition: {
+        search: typeof searchMedicalConditions;
+        page: typeof pageMedicalConditions;
+        get: typeof getMedicalCondition;
+    };
+    Movie: {
+        search: typeof searchMovies;
+        page: typeof pageMovies;
+        get: typeof getMovie;
+    };
+    Occupation: {
+        search: typeof searchOccupations;
+        page: typeof pageOccupations;
+        get: typeof getOccupation;
+    };
+    Organization: {
+        search: typeof searchOrganizations;
+        page: typeof pageOrganizations;
+        get: typeof getOrganization;
+    };
+    Performer: {
+        search: typeof searchPerformers;
+        page: typeof pagePerformers;
+        get: typeof getPerformer;
+    };
+    Season: {
+        search: typeof searchSeasons;
+        page: typeof pageSeasons;
+        get: typeof getSeason;
+    };
+    Series: {
+        search: typeof searchSeries;
+        page: typeof pageSeries;
+        get: typeof getSeries;
+    };
+    Soundtrack: {
+        search: typeof searchSoundtracks;
+        page: typeof pageSoundtracks;
+        get: typeof getSoundtrack;
+    };
+    SpacecraftClass: {
+        search: typeof searchSpacecraftClasses;
+        page: typeof pageSpacecraftClasses;
+        get: typeof getSpacecraftClass;
+    };
+    Spacecraft: {
+        search: typeof searchSpacecrafts;
+        page: typeof pageSpacecrafts;
+        get: typeof getSpacecraft;
+    };
+    Species: {
+        search: typeof searchSpecies;
+        page: typeof pageSpecies;
+        get: typeof getSpecies;
+    };
+    Staff: {
+        search: typeof searchStaff;
+        page: typeof pageStaff;
+        get: typeof getStaff;
+    };
+    Technology: {
+        search: typeof searchTechnologies;
+        page: typeof pageTechnologies;
+        get: typeof getTechnology;
+    };
+    Title: {
+        search: typeof searchTitles;
+        page: typeof pageTitles;
+        get: typeof getTitle;
+    };
+    TradingCardDeck: {
+        search: typeof searchTradingCardDecks;
+        page: typeof pageTradingCardDecks;
+        get: typeof getTradingCardDeck;
+    };
+    TradingCardSet: {
+        search: typeof searchTradingCardSets;
+        page: typeof pageTradingCardSets;
+        get: typeof getTradingCardSet;
+    };
+    TradingCard: {
+        search: typeof searchTradingCards;
+        page: typeof pageTradingCards;
+        get: typeof getTradingCard;
+    };
+    VideoGame: {
+        search: typeof searchVideoGames;
+        page: typeof pageVideoGames;
+        get: typeof getVideoGame;
+    };
+    VideoRelease: {
+        search: typeof searchVideoReleases;
+        page: typeof pageVideoReleases;
+        get: typeof getVideoRelease;
+    };
+    Weapon: {
+        search: typeof searchWeapons;
+        page: typeof pageWeapons;
+        get: typeof getWeapon;
+    };
+};
+export default STAPIClient;

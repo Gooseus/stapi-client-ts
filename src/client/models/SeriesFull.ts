@@ -1,0 +1,64 @@
+/* istanbul ignore file */
+/* tslint:disable */
+/* eslint-disable */
+
+import type { CompanyBase } from './CompanyBase';
+import type { EpisodeBase } from './EpisodeBase';
+import type { SeasonBase } from './SeasonBase';
+
+/**
+ * Full series, returned when queried using UID
+ */
+export type SeriesFull = {
+    /**
+     * Series unique ID
+     */
+    uid: string;
+    /**
+     * Series title
+     */
+    title: string;
+    /**
+     * Series abbreviation
+     */
+    abbreviation?: string;
+    /**
+     * Year the series production started
+     */
+    productionStartYear?: number;
+    /**
+     * Year the series production ended
+     */
+    productionEndYear?: number;
+    /**
+     * Date the series originally ran from
+     */
+    originalRunStartDate?: string;
+    /**
+     * Date the series originally ran to
+     */
+    originalRunEndDate?: string;
+    /**
+     * Number of seasons
+     */
+    seasonsCount?: number;
+    /**
+     * Number of episodes
+     */
+    episodesCount?: number;
+    /**
+     * Number of feature length episodes
+     */
+    featureLengthEpisodesCount?: number;
+    productionCompany?: CompanyBase;
+    originalBroadcaster?: CompanyBase;
+    /**
+     * Episodes in the series
+     */
+    episodes?: Array<EpisodeBase>;
+    /**
+     * Seasons in the series
+     */
+    seasons?: Array<SeasonBase>;
+};
+
